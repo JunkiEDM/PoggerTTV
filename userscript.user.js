@@ -28,10 +28,10 @@ function load()
 	
 	
 	
-	let clonedAddonMetadata = cloneInto(addonMetadata, unsafeWindow);
+	let clonedAddonMetadata = cloneInto(addonMetadata, window);
 
 
-	let addons = unsafeWindow.FrankerFaceZ.instance.addons;
+	let addons = window.FrankerFaceZ.instance.addons;
 
 	console.log(addons);
 
@@ -39,7 +39,7 @@ function load()
 
 	addons.rebuildAddonSearch();
 	
-	if (Object.values(unsafeWindow.FrankerFaceZ.instance.addons.addons).length > 1
+	if (Object.values(window.FrankerFaceZ.instance.addons.addons).length > 1
 		&& addons.isAddonEnabled("u-pttv"))
 	{
 		let addon = addons.getAddon("u-pttv");
@@ -52,7 +52,7 @@ function load()
 
 (function waitForElement()
 {
-	if(typeof unsafeWindow.FrankerFaceZ !== "undefined")
+	if(typeof window.FrankerFaceZ !== "undefined")
 	{
 		load();
 	}
